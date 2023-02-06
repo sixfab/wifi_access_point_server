@@ -1,0 +1,5 @@
+
+[YOUR_STATIC_IP]  [YOUR_LOCAL_DOMAIN_NAME]
+
+# for example:
+# 192.168.100.1    mysite.local
