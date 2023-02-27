@@ -31,6 +31,9 @@ systemctl stop wpa_supplicant
 
 # Stop active wpa supplicant processes
 pkill wpa_supplicant
+rfkill block wifi
+sleep 1
+rfkill unblock wifi
 
 # Restart dhcpcd, dnsmasq and hostapd
 systemctl daemon-reload
