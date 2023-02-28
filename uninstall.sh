@@ -10,6 +10,7 @@ fi
 mv /etc/dhcpcd.conf.orig /etc/dhcpcd.conf
 mv /etc/hosts.orig /etc/hosts
 mv /etc/dnsmasq.conf.orig /etc/dnsmasq.conf
+mv /home/sixfab/configs/config.yaml.orig /home/sixfab/configs/config.yaml
 
 # Remove services
 systemctl stop hostapd dnsmasq
