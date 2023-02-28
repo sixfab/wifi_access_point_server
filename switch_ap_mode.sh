@@ -21,6 +21,9 @@ cp ./ap_config_files/hostapd.conf /etc/hostapd/hostapd.conf
 # Add new local host name to /etc/hosts
 cp ./ap_config_files/hosts /etc/hosts
 
+# Add exception for wlan0 to core configuration file
+cp ./ap_config_files/core_config.yaml /home/sixfab/.core/configs/config.yaml
+
 # Stop services
 systemctl stop hostapd
 systemctl stop dnsmasq
@@ -35,9 +38,9 @@ rfkill block wifi
 sleep 1
 rfkill unblock wifi
 
-# Restart dhcpcd, dnsmasq and hostapd
+# Restart dhcpcd, dnsmasq, hostapd, core_manager
 systemctl daemon-reload
-systemctl restart dhcpcd dnsmasq hostapd
+systemctl restart dhcpcd dnsmasq hostapd core_manager
 
 
 
