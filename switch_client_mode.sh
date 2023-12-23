@@ -11,7 +11,7 @@ fi
 
 # Delete AP Configs
 cp ./client_config_files/dhcpcd.conf /etc/dhcpcd.conf
-cp ./client_config_files/core_config.yaml /home/sixfab/.core/configs/config.yaml
+cp ./client_config_files/core_config.yaml /home/pi/.core/configs/config.yaml
 
 # Add wifi credentials to wpa_supplicant config
 cp ./client_config_files/wpa_supplicant-wlan0.conf /etc/wpa_supplicant/wpa_supplicant-wlan0.conf

@@ -22,7 +22,7 @@ cp ./ap_config_files/hostapd.conf /etc/hostapd/hostapd.conf
 cp ./ap_config_files/hosts /etc/hosts
 
 # Add exception for wlan0 to core configuration file
-cp ./ap_config_files/core_config.yaml /home/sixfab/.core/configs/config.yaml
+cp ./ap_config_files/core_config.yaml /home/pi/.core/configs/config.yaml
 
 # Stop services
 systemctl stop hostapd
