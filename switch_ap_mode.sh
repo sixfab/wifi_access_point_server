@@ -15,6 +15,10 @@ cp ./ap_config_files/dhcpcd.conf /etc/dhcpcd.conf
 # Configure the dnsmaq
 cp ./ap_config_files/dnsmasq.conf /etc/dnsmasq.conf
 
+# Update SSID in the hostapd.conf file
+unique_part=$(ip link show eth0 | grep -oP 'ether \K[^ ]+' | cut -d: -f3-5 | tr -d ':')
+sed -i "s/\[UNIQUE\]/$unique_part/" ./ap_config_files/hostapd.conf
+
 # Configure the hostapd
 cp ./ap_config_files/hostapd.conf /etc/hostapd/hostapd.conf
 
