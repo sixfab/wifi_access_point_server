@@ -32,10 +32,6 @@ systemctl unmask hostapd
 systemctl disable hostapd dnsmasq
 systemctl stop hostapd dnsmasq
 
-# Update SSID in the hostapd.conf file
-unique_part=$(ip link show eth0 | grep -oP 'ether \K[^ ]+' | cut -d: -f3-5 | tr -d ':')
-sed -i "s/\[UNIQUE\]/$unique_part/" ./source_configs/hostapd.conf
-
 # Get the current configs from the system
 cp /etc/dhcpcd.conf /etc/dhcpcd.conf.orig
 cp /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
